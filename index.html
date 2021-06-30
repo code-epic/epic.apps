@@ -1,0 +1,181 @@
+<!--
+* Code-Epic - Administrador Gerencial
+* @version v2.0.0
+* @link 
+* Copyright (c) 2021-2022 code.epic.technologies
+* @Autor Carlos E. Peña
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Code.epic.apps - Login</title>
+  
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="kernel/css/style.css">
+  <link rel="stylesheet"  href='componentesjs/fonts/fonts.css' rel='stylesheet'>
+  <link rel="stylesheet"  href='componentesjs/font-awesome/css/font-awesome.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="node_modules/animate.css/animate.min.css">
+  <link rel="stylesheet" href="componentesjs/pace/themes/orange/pace-theme-loading-bar.css">
+  <style>
+    #xpage-pace{
+      display: none;
+    };
+  </style>
+  <script>window.$ = window.jQuery = require('jquery');</script>
+  <script src="componentesjs/pace/pace.min.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="componentesjs/notify/bootstrap-notify.min.js"></script>
+  <script>
+    require('./kernel/inicio/app.js')
+   
+  </script>
+</head>
+
+<body class="fondo-degradado">
+  
+  <div class="container " id="xpage-pace" >
+    <div class="row centrado " id="panel">
+      
+      <div class="row">
+        <div class="col-md-9 mx-auto">
+          <div class="card-group">
+            
+            <div class="card text-white py-4 d-md-down-none" style="width:600px; background-color: #53a3d1;">
+              <div class="card-body text-center">
+
+                <div id="cinfoi" class="carousel slide" data-bs-ride="carousel">
+                  
+                  <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="5000">
+                      <div> 
+                        <!-- Firts -->
+												<img src="images/middleware.png" style="width: 120px; height: 120px;
+                        margin-left: auto;
+                        margin-right: auto;"  class="rounded-circle"><br><br>
+                        <p>
+																El middleware permite que los desarrolladores conviertan las aplicaciones monolíticas heredadas en aplicaciones, lo cual mantiene activas las herramientas importantes con un rendimiento mejorado y una mayor portabilidad.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="5000">
+                      <div>
+                        <!-- Second -->
+												<img src="images/informacion.jpeg" style="width: 120px; height: 120px;
+                        margin-left: auto;
+                        margin-right: auto;" class="rounded-circle"><br><br>
+                        <p>
+                          CodeEpic Technologies ofrece un Bus de Servicio Empresarial como herramienta a un modelo de arquitectura de software que gestiona la comunicación entre servicios web, dando paso a las API RESTful, y GraphQl
+                        </p>
+                      </div>
+                    </div>
+                  
+
+                    
+                  </div>
+                </div>
+
+                
+
+
+              </div>
+            </div>
+            <div class="card p-6 ">
+              <div class="card-body" id="cardLogin">
+                <form #form="ngForm" >
+                  
+                  <br><h4>Epic.apps</h4>
+                  <p class="text-muted">Programaci&oacute;n Distribuida</p>
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-user"></i></span>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Usuario" id='usuario' required>
+                  </div>
+                  <div class="input-group mb-4">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                    </div>
+                    <input type="password" class="form-control" placeholder="Clave" id='clave' required>
+                  </div>
+                  <div class="row">
+                    
+                    <div class="col-12 justify-content-md-end d-grid gap-2 d-md-flex">
+                      <!-- <button type="button" class="btn btn-link px-0">¿Recuperar Clave?</button> -->
+                      <button type="button" class="btn btn-primary px-4 me-md-2 " id='_login' >Iniciar</button>
+                    </div>
+                  </div>
+                </form>
+
+                <hr>
+                Todos los derechos resevados 2021-2021
+              </div>  
+              <div class="card-body"  style="display: none;" id='cardLoading'>
+                <h6>Por favor espere</h6>
+                <hr>
+                  <br><br>
+                  <center>
+                     
+                        <img src="images/loading-init.gif" class="rounded-circle" width="100px" height="100px"><br><br>
+                        <span>Cargando...</span><br>
+                      
+                  </center>
+              
+              </div>
+              <div class="card-body"  style="display: none;" id='cardApps'>
+                
+                <div class="alert alert-ligth alert-dismissible fade show" role="alert">
+                  <strong>Aplicaciones!</strong>
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" id="cerrarSesion"></button>
+                 
+                </div>
+                <div class="row">
+                  
+                  <div class="col-md-4 text-center" style="color: cadetblue;">
+                    <a href="kernel/consola/index.html">
+                      <img src="images/panel/credito.png" style="width: 48px; height: 48px;" class="rounded-circle border border-success"><br>
+                      Consola
+                    </a>
+                  </div>
+                  <div class="col-md-4 text-center" style="color: cadetblue;" >
+                    <a href="app/panel/">
+                      <img src="images/panel/panel.png" style="width: 48px; height: 48px;" class="rounded-circle border border-success"><br>
+                      Panel
+                    </a>
+                  </div>
+
+                  <div class="col-md-4 text-center" style="color: cadetblue;">
+                    <img src="images/panel/articulo.png" style="width: 48px; height: 48px;" class="rounded-circle border border-success"><br>
+                    Afiliación
+
+                  </div>
+                  
+
+
+                </div>
+
+                <br>
+               
+                
+                
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    </div><br>
+    
+  </div>
+
+
+  <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 5" id='divAlertas'>
+
+  </div>
+
+</body>
+</html>

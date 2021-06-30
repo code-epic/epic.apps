@@ -1,0 +1,156 @@
+body{
+    font-family: 'Roboto';
+    font-size: 12px; 
+    
+}
+
+.fondo-degradado{
+    background: radial-gradient(circle at top left,  #0C7295, #4dbd74);
+}
+
+.epic-alert-warning {
+    font-size: 12px;
+    background: radial-gradient(circle at top left,  #fdfdd1, #feffce);
+}
+.epic-alert-danger {
+    font-size: 12px;
+    background: radial-gradient(circle at top left,  #fdd1d1, #ffcece);
+}
+  
+.titulo{
+    font-family: 'Roboto';
+    font-size: 12px;
+    color: #FFF;
+}
+.centrado{
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    margin-right: -40%;
+    transform: translate(-50%, -50%)
+}
+.centrado input{
+    border-radius: 20px;
+    font-family: 'Roboto';
+    font-size: 11px; 
+}
+
+.centrado button{
+    /* border-radius: 20px; */
+    font-family: 'Roboto';
+    font-size: 11px; 
+}
+
+
+.centrado-loading{
+    width: 160px;
+    height: 20em;
+    position: relative;
+    margin: 0;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+
+.centrado-panel { 
+    width: 400px;
+    height: 20em;
+    margin: 0;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+.centrado-panel input{
+    border-radius: 20px;
+}
+
+.centrado-panel button{
+    border-radius: 20px;
+}
+.centrado-panel h4 {
+    font-family: 'Roboto';
+    font-size: 16px;
+    color: #FFF;
+}
+/**
+ * Starter Control de la Interfaz Gráfica
+ *
+ */
+
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    text-align:left;
+    margin-right:-4px;
+}
+td {
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+.logo1{
+  -webkit-transition: width .3s ease-in-out;
+  -o-transition: width .3s ease-in-out;
+  transition: width .3s ease-in-out;
+  display: block;
+  float: left;
+  height: 50px;
+  font-size: 16px;
+  line-height: 50px;
+  text-align: center;
+  width: 580px;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  padding: 0 15px;
+  font-weight: 300;
+  overflow: hidden;
+}
+
+.fileUpload {
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+}
+.fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+.moverventana {
+    -webkit-app-region: drag;
+}

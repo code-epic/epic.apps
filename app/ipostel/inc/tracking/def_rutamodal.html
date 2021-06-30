@@ -1,0 +1,60 @@
+<!--
+    REALIZADO POR: Kenin Hernández
+    FECHA : 02/11/2020
+    TITULO: MAQUETADO DE definicón de Apartados
+ -- -->
+
+<div class="modal fade" id="AgregarDefRuta">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Definición de Ruta</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form role="form">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <form role="form">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <!-- text input -->
+                                                <div class="form-group">
+                                                    <label>Localidad</label>
+                                                    <input type="text" id="txtLocalidad" class="form-control"
+                                                        placeholder="Enter ...">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <!-- text input -->
+                                                <div class="form-group">
+                                                    <label>Zona</label>
+                                                    <input type="text" id="txtZona" class="form-control"
+                                                        placeholder="Enter ...">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label>Ruta</label>
+                                                    <textarea id="txtRuta"class="form-control" rows="3" placeholder="Enter ..."></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-default" data-dismiss="modal" id="btnCerrar">Cerrar</button>
+                <button type="button" class="btn btn-primary" id="btnGuardar">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>

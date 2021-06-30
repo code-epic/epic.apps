@@ -1,0 +1,225 @@
+<!-- Realizado por: Maikol Echenique
+     Fecha: 24-11-2020
+     Titulo: Maquetado de vista servicios postales
+-->
+<section>
+  <form role="form">
+      <div class="row">
+          <div class="col-lg-12">
+              <div class="card card-primary ">
+                <div class="card-header ">
+                  <h3 class="card-title">Reportes Punto Postal Control</h3>
+                </div>
+                  <div class="card-body">
+                      <form role="form">
+                          <div class="row">
+                            <div class="col-lg-6">
+                                  <div class="form-group">    
+                                              <label>Control de Ingresos </label>                                              
+                                          <div class="input-group">
+                                          <div class="input-group-prepend">
+                                              <span class="input-group-text">
+                                              <input type="checkbox" id="chkControlIngresos">
+                                              </span>
+                                          </div>
+                                              <select class="form-control selected" id="cmbControlIngresos" onchange="">
+                                                  <option value="0">Seleccione</option>
+                                                  <option value="1">044</option>
+                                                  <option value="2">045</option>
+                                              </select>
+                                          </div>
+                                  </div>
+                            </div>
+                                  <div class="col-sm-2">
+                                    <div class="form-group">    
+                                            <label>Desde</label>
+                                            <input type="date" id="txtControlDesde" class="form-control" placeholder="Enter ...">
+                                    </div>
+                                  </div>
+                                  <div class="col-sm-2">
+                                    <div class="form-group">    
+                                            <label>Hasta</label>
+                                            <input type="date" id="txtControlHasta" class="form-control" placeholder="Enter ...">
+                                    </div>
+                                  </div>  
+                                  <div class="col-sm-2">
+                                    <div class="form-group">    
+                                            <label>Reporte</label>
+                                            <button type="button" class="btn btn-primary btn-md" id="btnGenerarReporte">Generar Reporte</button>
+                                    </div>
+                                  </div>  
+                              </div>
+                          </div>
+                      </form>
+          </div>
+      </div>
+  </form>
+</section>
+
+
+<section>
+  <form role="form">
+      <div class="row">
+          <div class="col-lg-12">
+              <div class="card card-primary ">
+                  <div class="card-body">
+                      <form role="form">
+                          <div class="row">
+                            <div class="col-lg-6">
+                                  <div class="form-group">    
+                                              <label>Inventario</label>                                              
+                                          <div class="input-group">
+                                          <div class="input-group-prepend">
+                                              <span class="input-group-text">
+                                              <input type="checkbox" id="chkInventario">
+                                              </span>
+                                          </div>
+                                              <select class="form-control selected" id="cmbInventario" onchange="">
+                                                  <option value="0">Seleccione</option>
+                                                  <option value="1">Valores Recibidos</option>
+                                                  <option value="2">Movimientos de Valores en Taquilla</option>
+                                                  <option value="3">Listado de Productos</option>
+                                                  <option value="4">Máximos y Minimos</option>
+                                                  <option value="3">Inventario de Oficina</option>
+                                                  <option value="3">Inventario Vendedores</option>
+                                                  <option value="3">Inventario Total</option>
+                                                  <option value="3">Cierre Semanal</option>
+                                                  <option value="3">Devoluciones</option>
+                                                  <option value="3">Movimientos Mensual</option>
+                                              </select>
+                                          </div>
+                                  </div>
+                            </div>
+                                  <div class="col-sm-2">
+                                    <div class="form-group">    
+                                            <label>Desde</label>
+                                            <input type="date" id="txtInventarioDesde" class="form-control" placeholder="Enter ...">
+                                    </div>
+                                  </div>
+                                  <div class="col-sm-2">
+                                    <div class="form-group">    
+                                            <label>Hasta</label>
+                                            <input type="date" id="txtInventarioHasta" class="form-control" placeholder="Enter ...">
+                                    </div>
+                                  </div> 
+                                  <div class="col-sm-2">
+                                    <div class="form-group">    
+                                            <label>Reporte</label>
+                                            <button type="button" class="btn btn-primary btn-md" id="btnGenerarReporte">Generar Reporte</button>
+                                    </div>
+                                  </div>    
+                              </div>
+                          </div>
+                      </form>
+          </div>
+      </div>
+  </form>
+</section>
+<section>
+  <form role="form">
+      <div class="row">
+          <div class="col-lg-12">
+              <div class="card card-primary ">
+                  <div class="card-body">
+                      <form role="form">
+                          <div class="row">
+                            <div class="col-lg-6">
+                                  <div class="form-group">    
+                                              <label>Ventas</label>                                              
+                                          <div class="input-group">
+                                          <div class="input-group-prepend">
+                                              <span class="input-group-text">
+                                              <input type="checkbox" id="chkVentas">
+                                              </span>
+                                          </div>
+                                              <select class="form-control selected" id="cmbVentas" onchange="">
+                                                  <option value="0">Seleccione</option>
+                                                  <option value="1">Ventas Detalladas</option>
+                                                  <option value="2">Ventas Detalladas de Franqueo</option>
+                                                  <option value="3">Ventas Detalladas EEB</option>
+                                                  <option value="4">Ventas Detalladas EMS</option>
+                                                  <option value="4">Ventas a Crédito</option>
+                                                  <option value="4">Ventas Transmitidasd</option>
+                                              </select>
+                                          </div>
+                                  </div>
+                            </div>
+                                  <div class="col-sm-2">
+                                    <div class="form-group">    
+                                            <label>Desde</label>
+                                            <input type="date" id="txtVentasDesde" class="form-control" placeholder="Enter ...">
+                                    </div>
+                                  </div>
+                                  <div class="col-sm-2">
+                                    <div class="form-group">    
+                                            <label>Hasta</label>
+                                            <input type="date" id="txtVentasHasta" class="form-control" placeholder="Enter ...">
+                                    </div>
+                                  </div>
+                                  <div class="col-sm-2">
+                                    <div class="form-group">    
+                                            <label>Reporte</label>
+                                            <button type="button" class="btn btn-primary btn-md" id="btnGenerarReporte">Generar Reporte</button>
+                                    </div>
+                                  </div>     
+                              </div>
+                          </div>
+                      </form>
+          </div>
+      </div>
+  </form>
+</section>
+<section>
+  <form role="form">
+      <div class="row">
+          <div class="col-lg-12">
+              <div class="card card-primary ">
+                  <div class="card-body">
+                      <form role="form">
+                          <div class="row">
+                            <div class="col-lg-6">
+                                  <div class="form-group">    
+                                              <label>Otros Reportes</label>                                              
+                                          <div class="input-group">
+                                          <div class="input-group-prepend">
+                                              <span class="input-group-text">
+                                              <input type="checkbox" id="chkOtrosReportes">
+                                              </span>
+                                          </div>
+                                              <select class="form-control selected" id="cmbOtrosReportes" onchange="">
+                                                  <option value="0">Seleccione</option>
+                                                  <option value="1">Certificados</option>
+                                                  <option value="2">Consignación SETRA</option>
+                                                  <option value="2">Piezas Postales</option>
+                                                  <option value="2">Apartados</option>
+                                                  <option value="2">Telegramas</option>
+                                                  <option value="2">Facturas</option>
+                                              </select>
+                                          </div>
+                                  </div>
+                            </div>
+                                  <div class="col-sm-2">
+                                    <div class="form-group">    
+                                            <label>Desde</label>
+                                            <input type="date" id="txtOtrosDesde" class="form-control" placeholder="Enter ...">
+                                    </div>
+                                  </div>
+                                  <div class="col-sm-2">
+                                    <div class="form-group">    
+                                            <label>Hasta</label>
+                                            <input type="date" id="txtOtrosHasta" class="form-control" placeholder="Enter ...">
+                                    </div>
+                                  </div>
+                                  <div class="col-sm-2">
+                                    <div class="form-group">    
+                                            <label>Reporte</label>
+                                            <button type="button" class="btn btn-primary btn-md">Generar Reporte</button>
+                                    </div>
+                                  </div>     
+                              </div>
+                          </div>
+                      </form>
+          </div>
+      </div>
+  </form>
+</section>

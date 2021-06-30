@@ -1,0 +1,82 @@
+<!-- Realizado por: Maikol Echenique
+     Fecha: 24-11-2020
+     Titulo: Maquetado de vista Semanas
+-->
+<section class="content">
+  <div class="row">
+    <div class="col-12 text-right">
+        <div class="col-12 mb-3" style="text-align: right;">
+            <button type="button" onclick="_mdlAgregarUsuarioOficina()" class="btn btn-lg btn-info"><i class="fas fa-plus" title="Crear Usuario"></i></button>
+        </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card card-indigo" id="ListarUsuariosOficina">
+          <div class="card-header">
+            <h3 class="card-title">Adminstrar Usuarios Oficina</h3>
+          </div>
+          <div class="card-body">
+            <div class="col-12">
+              <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                  <tr>
+                    <th>N°</th>
+                    <th>Nombres</th>
+                    <th>Apellidos</th>
+                    <th>Cargo</th>
+                    <th>Taquilla Asignada</th>
+                    <th>Acción</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>Maria Jose</td>
+                    <td>Castro Malave</td>
+                    <td>Jefe de Oficina</td>
+                    <td> -- </td>
+                    <td>
+                      <a href=""><i class="fas fa-lg fa-fw  fa-edit text-indigo" title="Editar"></i></a>
+                      <a href=""><i class="fas fa-lg fa-fw  fa-trash-alt text-indigo" title="Desactivar"></i></a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>Petra Maria</td>
+                    <td>Marques Malave</td>
+                    <td>Taquillero</td>
+                    <td> 2 </td>
+                    <td>
+                      <a><i class="fas fa-lg fa-fw  fa-edit text-indigo" title="Editar"></i></a>
+                      <a><i class="fas fa-lg fa-fw  fa-trash-alt text-indigo" title="Desactivar"></i></a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  $(function () {
+    $("#example1").DataTable({
+      "responsive": true,
+      "autoWidth": false,
+    });
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });
+</script>

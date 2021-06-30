@@ -1,0 +1,9 @@
+body{
+    background-color: #1D9D36;
+    /** background-color:linear-gradient(197deg, #1D9D36 1%, rgb(200, 238, 208) 200.5%) !important; */
+
+}
+
+.hide{
+    display: none;
+}

@@ -1,0 +1,81 @@
+<!-- Realizado por: Maikol Echenique
+     Fecha: 24-11-2020
+     Titulo: Maquetado de vista servicios postales
+-->
+<section>
+  <form role="form">
+      <div class="row">
+          <div class="col-lg-12">
+              <div class="card card-primary">
+                <div class="card-header ">
+                  <h3 class="card-title">Apartados</h3>
+                </div>
+                  <div class="card-body">
+                      <form role="form">
+                          <div class="row">
+                              <div class="col-sm-4">
+                                  <div class="form-group">    
+                                              <label>Tipos de Apartados</label>
+                                              <select class="form-control selected" id="cmbTipoApartado" onchange="">
+                                                  <option value="0">Seleccione</option>
+                                                  <option value="1">Natural</option>
+                                                  <option value="2">Jurídico</option>
+                                              </select>
+                                      </div>
+                                  </div>
+
+                                  <div class="col-sm-4">
+                                    <div class="form-group">
+                                      <label>N° Apartado</label>
+                                      <input type="text" id="txtNroApartado" class="form-control" placeholder="Enter ...">
+                                  </div>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                      <div class="form-group">    
+                                                  <label>Frecuencia de Pago</label>                                              
+                                              <select class="form-control selected" id="cmbFrecuencia" onchange="">
+                                                      <option value="0">Seleccione</option>
+                                                      <option value="1">Trimestre</option>
+                                                      <option value="2">Semestre</option>
+                                                      <option value="3">Anual</option>
+                                                      <option value="3">Días</option>
+                                                  </select>
+                                          </div>
+                                      </div>
+                                  
+                              </div>
+
+
+                          <div class="row">
+                                      <div class="col-md-4">
+                                          <div class="form-group">
+                                              <label>Tarifa</label>
+                                              <input type="text" id="txtTarifa" class="form-control" placeholder="Enter ...">
+                                          </div>
+                                      </div>
+                                    <div class="col-md-4">
+                                      <div class="form-group">
+                                          <label>Impuesto</label>
+                                          <input type="text" id="txtImpuesto" class="form-control" placeholder="Enter ...">
+                                      </div>
+                                  </div>
+                                  <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Monto</label>
+                                        <input type="text" id="txtMonto" class="form-control" placeholder="Enter ...">
+                                    </div>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col-12 text-center mt-3">
+                                    <button type="reset" class="btn btn-outline-primary" id="btnLimpiar">Limpiar</button>
+                                    <button type="button" class="btn btn-outline-primary" id="btnGuardar">Guardar</button>
+                                </div>
+                            </div>
+                          </div>
+                        </div> 
+                      </form>
+                  </div>
+  </form>
+</section>

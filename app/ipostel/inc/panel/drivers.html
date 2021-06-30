@@ -1,0 +1,103 @@
+<section class="esb">
+    <form role="form" id="Drivers">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card " style="height: 550px;">
+                    <div class="card-header ">
+                        <h3 class="card-title">Listado</h3>
+                    </div>
+                    <div class="card-body">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="card " style="height: 550px;">
+                    <div class="card-header ">
+                        <h3 class="card-title">Crear Drivers</h3>
+                    </div>
+                    <div class="card-body">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Driver</label>
+                                            <input type="text" id="txtDriver" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Host ( localhost | 192.180.0.0 )</label>
+                                            <input type="text" id="txtHost" class="form-control" >
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Puerto</label>
+                                            <input type="number" id="txtPuerto" class="form-control" >
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Usuario</label>
+                                            <input type="text" id="txtUsuario" class="form-control" >
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Clave</label>
+                                            <input type="text" id="txtClave" class="form-control"  >
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Base de Datos</label>
+                                            <input type="text" id="txtBaseDatos" class="form-control" >
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>URL (Opcional)</label>
+                                            <input type="text" id="txtUrl" class="form-control" >
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="form-group">
+                                            <label>Descripción</label>
+                                            <input type="text" id="txtDescripcion" class="form-control"  >
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>ID</label>
+                                            <input type="text" id="txtId"class="form-control" >
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Estatus</label>
+                                            <select id="cmbEstatus" class="form-control selected">
+                                                <option value=true>VERDADERO</option>
+                                                <option value=false>FALSO</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                    </div>
+                    <div class="card-footer">
+                        <button type="button" class="btn btn-warning" onclick="Drivers.Salvar()">Salvar Datos</button>
+                        <button type="button" class="btn btn-default float-right">Cancelar</button>
+                      </div> 
+                </div> 
+            </div>
+        </div>
+    </form>
+</section>

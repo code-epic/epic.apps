@@ -1,0 +1,261 @@
+<!--
+* Code-Epic - Administrador Gerencial
+* @version v2.0.0
+* @link 
+* Copyright (c) 2021-2022 code.epic.technologies
+* @Autor Carlos E. Peña
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Code.epic.apps - Consola</title>
+  
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+  <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet"  href='../../componentesjs/fonts/fonts.css' rel='stylesheet'>
+  <link rel="stylesheet"  href='../../componentesjs/font-awesome/css/font-awesome.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="../../node_modules/animate.css/animate.min.css">
+  <link rel="stylesheet" href="../../componentesjs/pace/themes/orange/pace-theme-loading-bar.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/consola.css">
+  <style>
+    #xpage-pace{
+      display: none;
+    };
+  </style>
+
+  <script>window.$ = window.jQuery = require('jquery');</script>
+  <script src="../../componentesjs/pace/pace.min.js"></script>
+  <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="../../componentesjs/notify/bootstrap-notify.min.js"></script>
+  <script>
+    require('../inicio/consola.js');
+  </script>
+
+  <script defer src="../inicio/render.js"></script>
+
+</head>
+
+<body class="bg-light" >
+  <div id="xpage-pace">
+
+  
+  
+    <nav class="main-menu ">
+      <ul>
+        <li>
+              <i class="fa fa-code fa-2x text-white"></i>
+        </li>
+        <li class="divider">
+          <hr>
+        </li>
+        <li>
+            <a href="http://justinfarrow.com">
+                <i class="fa fa-home fa-2x"></i>
+                
+            </a>
+          
+        </li>
+        <li class="has-subnav">
+            <a href="#" id="consola">
+                <i class="fa fa-laptop fa-2x" ></i>
+                
+            </a>
+            
+        </li>
+        <li class="has-subnav">
+            <a href="#">
+                <i class="fa fa-list fa-2x"></i>
+              
+            </a>
+            
+        </li>
+        <li class="has-subnav">
+            <a href="#">
+                <i class="fa fa-folder-open fa-2x"></i>
+               
+            </a>
+            
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa fa-bar-chart-o fa-2x"></i>
+               
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa fa-font fa-2x"></i>
+              
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa fa-table fa-2x"></i>
+              
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa fa-map-marker fa-2x"></i>
+              
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa fa-info fa-2x"></i>
+               
+            </a>
+        </li>
+      </ul>
+
+      <ul class="logout">
+          <li>
+              <a href="#" id='cerrarSesion'>
+                    <i class="fa fa-power-off fa-2x"></i>
+                
+              </a>
+          </li>  
+      </ul>
+    </nav>
+
+    <section class="contenido text-gray" >
+      <div class="container">
+        <div class="row" style="margin-left: 30px; height: 30px; margin-right: -20px;">
+          <nav class="navbar fixed-top navbar-light codenav moverventana ">
+            <div class="container-fluid" style="margin-left: 30px; margin-right: -20px;  height: 25px;">
+              <a class="navbar-brand" href="#">
+                <h5 >
+                  Epic Technologies
+                </h5>
+                
+                
+              </a>
+
+              <form class="d-flex codenavbar" style="margin-top: -10px; ">
+                <a href="#" ><i class="fa fa-arrow-left fa-3x"></i></a>
+                <a href="#"><i class="fa fa-home fa-3x"></i></a>
+                
+                
+                
+              </form>
+            </div>
+          </nav>
+        </div>
+				
+				
+        
+        <br><br>
+				<div class="row justify-content-md-center" style="margin-left: 30px;display:none" id="codePage">
+          <div class="col-md-0 col-lg-0"></div>
+          <div class="col-md-6 col-lg-6">
+            
+            <div class="row">
+              <div class="col-md-12 col-lg-8" >
+                <div class="card " style="height: 325px;">
+                  <img src="../../images/seguridad.png" class="card-img-top" alt="">
+                  <div class="card-body epic-card-dark">
+
+                    <ul class="list-group list-group-flush text-gray" style="color: #d6d3d3;">
+                      <li class="list-group-item">
+                        <span>CEDULA</span> : <span id="cedula"></span>    
+                      </li>
+                      <li class="list-group-item">
+                        <span>NOMBRE</span> : <span id="nombre"></span>   
+                      </li>
+                    
+                      <li class="list-group-item">
+                        <span>PERFIL</span> : <span id="perfil"></span>   
+                      </li>
+                      <li class="list-group-item">
+                        <span>CORREO</span> : <span id="correo"></span>   
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="d-md-none col-lg-4 d-lg-block">
+                <div class="card alert-warning" style="padding:0px; height: 150px;">
+                  <div class="card-body">
+                    <h6>  Disco Duro  </h6>
+                    <hr>
+                    <span>
+                      <h1> <span id="porcentaje"></span>%<i class="fa fa-hdd-o float-end" style="font-size:64px;left: -10px;"></i></h1>
+                      
+                    </span>
+                    <span>Disponible <span id="discodisponible"></span> GB.</span>
+                  </div>
+                </div>
+                <br>
+                <div class="card alert-success" style="padding:0px;">
+                  <div class="card-body ">
+                    <h6>Memoria</h6>
+                    <hr>
+                    
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-6">
+            
+            
+            <div class="mx-auto">
+              <div class="card-group" style="height: 325px;">
+                <div class="card text-white d-md-down-none" style="background-color: #53a3d1;">
+                  <div class="card-body">
+                    <h6>Información del sistema</h6>
+                    <hr>
+                    Sistema Operativo: <span id="os"></span>  <br>
+                    Memoria : <span id="memtotal"></span> MB<br>
+                    Disco Duro : <span id="disco"></span> GB<br>
+                    
+                    Mac Address : <span id="mac"></span> <br>
+                    Procesador : <span id="cpus"></span> <br>
+                    <hr>
+                    Dirección IP <br>
+                    <span id="ip"></span>
+                  </div>
+                </div>
+                <div class="card d-md-none d-lg-block">
+                  <div class="card-body text-center"><br>
+                    <img src="../../images/himg.png" class="img-responsive" style="width: 240px;">
+                  </div>
+                </div>
+              </div>
+            </div>  
+            
+            
+
+          </div>
+          <!--  -->
+        
+
+        </div>
+      </div>
+      <div class="row" style="margin-top:-24px;width:100%;height: 100%;margin-left:-2px">
+        <webview
+          id="webview"
+          autosize
+          src="https://app.ipsfa.gob.ve/sssifanb/"
+          data-home="https://app.ipsfa.gob.ve/sssifanb/"
+					
+
+					></webview>
+
+      </div>
+    </section>
+    
+  </main>
+
+
+  
+  <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 5" id='divAlertas'></div>
+
+
+</body>
+</html>

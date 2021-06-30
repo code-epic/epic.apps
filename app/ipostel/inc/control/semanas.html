@@ -1,0 +1,131 @@
+<!-- Realizado por: Maikol Echenique
+     Fecha: 24-11-2020
+     Titulo: Maquetado de vista Semanas
+-->
+<section>
+  <form role="form">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card card-yellow ">
+                <div class="card-header ">
+                  <h3 class="card-title">Semanas</h3>
+                </div>
+                  <div class="card-body">
+                      <form role="form">
+                          <div class="row justify-content-lg-center">
+                            <div class="col-lg-4">
+                              <button type="button" class="btn btn-outline-warning btn-lg" id="btnAperturaSemana">Aperturar Semana</button>
+                            </div>
+                                  <div class="col-md-4">
+                                    <div class="form-group">
+                                            <input type="txtDesdeHasta" id="date_range" name="date_range" class="form-control">
+                                    </div>
+                                  </div> 
+                              </div>
+                          </div>
+                      </form>
+          </div>
+      </div>
+  </form>
+</section>
+
+
+<section class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="card card-yellow" id="">
+          <div class="card-header">
+            <h3 class="card-title">Histórico Semanas</h3>
+          </div>
+          <div class="card-body">
+            <div class="col-12">
+              <table id="tbSemanas" class="table table-bordered table-striped">
+                <thead>
+                  <tr>
+                    <th>Semnana</th>
+                    <th>Mes</th>
+                    <th>Desde</th>
+                    <th>Hasta</th>
+                    <th>Status</th>
+                    <th>Acción</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td> Noviembre</td>
+                    <td> 02-11-2020</td>
+                    <td> 08-11-2020</td>
+                    <td> Abierta</td>
+                    <td>
+                      <a href="" ><i class="fas fa-lg fa-fw  fa-calendar-times" title="Cerrar Semana" id="btnCerrar"></i></a>
+                      <a href=""><i class="fas fa-lg fa-fw  fa-trash-alt text-danger" title="Eliminar Semana" id="btnEliminar"></i></a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td> Noviembre</td>
+                    <td> 09-11-2020</td>
+                    <td> 15-15-2020</td>
+                    <td> Cerrada</td>
+                    <td>
+                      <a href=""><i class="fas fa-lg fa-fw  fa-calendar-times" title="Cerrar Semana" id="btnCerrar"></i></a>
+                      <a href=""><i class="fas fa-lg fa-fw  fa-trash-alt text-danger" title="Eliminar Semana" id="btnEliminar"></i></a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<script>
+$(function () {
+  $('#date_range').daterangepicker({
+      "locale": {
+          "format": "YYYY-MM-DD",
+          "separator": " - ",
+          "applyLabel": "Guardar",
+          "cancelLabel": "Cancelar",
+          "fromLabel": "Desde",
+          "toLabel": "Hasta",
+          "customRangeLabel": "Personalizar",
+          "daysOfWeek": [
+              "Do",
+              "Lu",
+              "Ma",
+              "Mi",
+              "Ju",
+              "Vi",
+              "Sa"
+          ],
+          "monthNames": [
+              "Enero",
+              "Febrero",
+              "Marzo",
+              "Abril",
+              "Mayo",
+              "Junio",
+              "Julio",
+              "Agosto",
+              "Setiembre",
+              "Octubre",
+              "Noviembre",
+              "Diciembre"
+          ],
+          "firstDay": 1
+      },
+      "startDate": "2016-01-01",
+      "endDate": "2016-01-07",
+      "opens": "center"
+  });
+});
+</script>

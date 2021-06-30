@@ -1,0 +1,83 @@
+<div class="container-fluid">
+    <div class="row">
+        <!-- left column -->
+        <div class="col-md-12">
+            <!-- general form elements -->
+            <div class="col-12 mb-3" style="text-align: right;">
+                <button type="button" onclick="_mdlAgregarUsuario()" class="btn btn-lg btn-warning"><i class="fas fa-plus"></i> </button>
+            </div>
+            <div class="card card-warning">
+                <div class="card-header">
+                    <h3 class="card-title">Control de Usuarios</h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+
+
+                    <div class="col-12">
+                        <table id="example1" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Usuario</th>
+                                    <th>Rol</th>
+                                    <th>Acción</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Usuario 1</td>
+                                    <td>Admin</td>
+                                    <td>
+                                        <a href=""><i class="fas fa-lg fa-fw  fa-edit text-success" ></i></a>
+                                        <a href=""><i class="fas fa-lg fa-fw  fa-trash-alt text-danger"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Usuario 2</td>
+                                    <td>Taquillero</td>
+                                    <td>
+                                        <a href=""><i class="fas fa-lg fa-fw fa-edit text-success" ></i></a>
+                                        <a href=""><i class="fas fa-lg fa-fw fa-trash-alt text-danger"></i></a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Usuario</th>
+                                    <th>Rol</th>
+                                    <th>Acción</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+
+                    <!-- /.card -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.card -->
+</div>
+
+
+<script>
+    $(function () {
+      $("#example1").DataTable({
+        "responsive": true,
+        "autoWidth": false,
+      });
+      $('#example2').DataTable({
+        "paging": true,
+        "lengthChange": false,
+        "searching": false,
+        "ordering": true,
+        "info": true,
+        "autoWidth": false,
+        "responsive": true,
+      });
+    });
+  </script>

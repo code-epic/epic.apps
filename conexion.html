@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Sifanb.apps - Conexión</title>
+  
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link rel="stylesheet" href="componentesjs/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="kernel/css/style.css">
+  <link rel="stylesheet"  href='componentesjs/fonts/fonts.css' rel='stylesheet'>
+  <link rel="stylesheet"  href='componentesjs/font-awesome/css/font-awesome.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="componentesjs/animate/animate.css">
+  <link rel="stylesheet" href="componentesjs/pace/themes/orange/pace-theme-loading-bar.css">
+  
+  <script>window.$ = window.jQuery = require('jquery');</script>
+  <script src="componentesjs/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="componentesjs/notify/bootstrap-notify.min.js"></script>
+  <script>
+    require('./kernel/inicio/conexion.js')
+    require('./kernel/inicio/indexdb.js')
+
+  </script>
+</head>
+
+<body class="fondo-degradado">
+  <div class="container" >
+    <div class="row centrado-panel" id="panel">
+      <center>
+          <div class="col-md-12">
+            <h3 class="titulo">Sistema de Seguridad Social</h3><br>
+            <a href='https://localhost/sssifanb/'><img src="images/lg1.jpg" width="160px" height="160px" class="img-circle">'
+            </a><br><br>
+            
+            <div class="form-group has-feedback">
+              <input type="text" class="form-control" placeholder="Dirección del Servidor" id="dirip">
+              <span class="glyphicon glyphicon-hdd form-control-feedback"></span>
+            </div>
+          
+            
+          <button type="submit" id="_login" class="btn btn-warning btn-block">
+              Probar Conexión</button>
+           <button type="submit" id="_create" class="btn btn-success btn-block" style="display:none">
+              Conectarse</button>      
+          </div>     
+      </center>
+    </div><br>
+    
+  </div>
+
+  <div class="row centrado-loading" id="homeLoading" style="display:none">
+      <center>
+          <div class="col-md-12 img-circle" style="background:#FFF;width:120px;height:120px; padding:10px">
+            <img src="images/loading-init-2.gif" width="100px" height="100px"><br><br>
+            <h3 class="titulo">Conectando...</h3><br>
+          </div>
+      </center>
+  </div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+
+
+ <div class="modal fade" id="agregar_usuario">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Agregar Usuario</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form role="form">
+                <div class="card-body row">
+                    <div class="col-6">
+                        <label for="txtCedula">Cédula</label>
+                        <input type="text" class="form-control" id="txtCedula" placeholder="Cédula">
+                    </div>
+                    <div class="col-6">
+                        <label for="txtNombre">Nombre</label>
+                        <input type="text" class="form-control" id="txtNombre" placeholder="Nombre">
+                    </div>
+                    <div class="col-6">
+                        <label for="txtApellido">Apellido</label>
+                        <input type="text" class="form-control" id="txtApellido" placeholder="Apellido">
+                    </div>
+                    <div class="col-6">
+                        <label for="txtUsuario">Usuario</label>
+                        <input type="text" class="form-control" id="txtUsuario" placeholder="Usuario">
+                    </div>
+                    <div class="col-6">
+                        <label for="txtContraseña">Contraseña</label>
+                        <input type="text" class="form-control" id="txtContraseña" placeholder="Contraseña">
+                    </div>
+                    <div class="col-6">
+                        <label for="txtConfirmarContraseña">Confirmar Contraseña</label>
+                        <input type="text" class="form-control" id="txtConfirmarContraseña" placeholder="Confirmar Contraseña">
+                    </div>
+                    <div class="col-6">
+                        <label for="rol">Rol</label>
+                        <select class="form-control select" name="" id="cmbRol">
+                            <option value="">Admin</option>
+                            <option value="">Supervisor</option>
+                        </select>
+                    </div>
+                    <div class="col-6">
+                        <label for="exampleInputPassword1">OPT</label>
+                        <select class="form-control select" name="" id="cmbOpt">
+                            <option value="">Caracas</option>
+                            <option value="">Miranda</option>
+                        </select>
+                    </div>
+                    <div class="col-6">
+                        <label for="txtTelefono">Teléfono</label>
+                        <input type="text" class="form-control" id="txtTelefono" placeholder="Teléfono">
+                    </div>
+                    <div class="col-6">
+                        <label for="txtCorreo">Correo</label>
+                        <input type="email" class="form-control" id="txtCorreo" placeholder="Correo">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer justify-content-between">
+          <button type="button" class="btn btn-default" data-dismiss="modal" id="btnCerrar">Cerrar</button>
+          <button type="button" class="btn btn-primary" id="btnGuardar">Guardar</button>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <!-- /.modal -->

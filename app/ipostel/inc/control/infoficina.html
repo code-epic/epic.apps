@@ -1,0 +1,108 @@
+<!--
+Realizado por: Maikol Echenique
+Fecha: 01-12-2020
+Titulo: Maquetado de INformación de la Oficina
+ -->
+
+<section>
+    <form role="form">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card card-yellow">
+                    <div class="card-header ">
+                        <h3 class="card-title">Información de la Oficina</h3>
+                      </div>
+                        <div class="card-body">
+                            <form role="form">
+
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label>Código</label>
+                                                <input type="text" id="txtCodigo"class="form-control" placeholder="080601190000" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Nombre de la Oficina</label>
+                                                <input type="text" id="txtNombreOficina" class="form-control" placeholder="OPT SAN JUAN DE LOS MORROS" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label>Telefono</label>
+                                                <input type="text" id="txtTelefono"class="form-control" placeholder="0212-6020202" disabled>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label>Código Postal</label>
+                                                <input type="text" id="txtCodigoPostal"class="form-control" placeholder="1160" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label>Jefe de Oficina</label>
+                                                <input type="text" id="txtJefeOficina" class="form-control" placeholder="PEDRO PEREZ DELGADO" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label>Fax</label>
+                                                <input type="text" id="txtFax"class="form-control" placeholder="0212-6020202" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label>Tipo de Impuesto</label>
+                                                <select id="cmbTipoImpuesto" class="form-control selected" onchange="">
+                                                    <option value="0">SELECCIONE</option>
+                                                    <option value="1">PUERTO LIBRE</option>
+                                                    <option value="2">ESPECIAL</option>
+                                                    <option value="3">IVA</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Dirección</label>
+                                                <textarea id="txtDireccionDestino" class="form-control" rows="3" placeholder="Enter ..."></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12 text-center mt-3">
+                                            <button type="reset" class="btn btn-outline-warning" id="btnLimpiar">Limpiar</button>
+                                            <button type="button" class="btn btn-outline-warning" id="btnGuardar">Guardar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                            
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</section>
+        
+
+<script>
+
+    $(function() {
+
+        Util.CargarImpuesto('cmbTipoImpuesto');
+        ListarTipoImpuesto();
+    })
+   
+</script>

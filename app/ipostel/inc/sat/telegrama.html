@@ -1,0 +1,156 @@
+<!--
+Realizado por: Maikol Echenique
+Fecha: 01-11-2020
+Titulo: Maquetado de Telegramas
+ -->
+
+<section>
+    <form role="form">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card card-yellow">
+                    <div class="card-header ">
+                        <h3 class="card-title">Consignación de Telegramas </h3>
+                      </div>
+                    <div class="card-body">
+                        <form role="form">
+                            
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-5 mr-3">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Servicios</label>
+                                                <select class="form-control selected" id="cmbServicio" onchange="">
+                                                    <option value="0">SELECCIONE</option>
+                                                    <option value="1">TELEGRAMA ORDINARIO</option>
+                                                    <option value="2">TELEGRAMA URGENTE</option>
+                                                    <option value="3">PETICIÓN DE CONFIRMACIÓN</option>
+                                                    <option value="4">TELEGRAMA URGENTE PC</option>
+                                                    <option value="5">RESPUESTA PAGADA</option>
+                                                    <option value="6">RESPUESTA POR TELEFONO</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Otros</label>
+                                                <select id="cmbOtros" class="form-control selected" onchange="">
+                                                    <option value="0">SELECCIONE</option>
+                                                    <option value="1">SVH</option>
+                                                    <option value="2">ADG</option>
+                                                    <option value="3">ETAPORTE</option>
+                                                    <option value="4">ST</option>
+                                                    <option value="5">RST</option>
+                                                    <option value="6">ETAT</option>
+                                                    <option value="7">RCT</option>
+                                                    <option value="8">PRENSA</option>
+                                                    <option value="9">CONFERENCE</option>
+                                                    <option value="10">LF</option>
+                                                    <option value="11">LTF</option>
+                                                    <option value="12">RQ</option>
+                                                    <option value="13">BQ</option>
+                                                    <option value="14">CR</option>
+                                                    <option value="15">O</option>
+                                                    <option value="16">ETAPRIORITENATIONS</option>
+                                                    <option value="17">RCT URGENTE</option>
+                                                    <option value="18">PRENSA URGENTE</option>
+                                                    <option value="19">CONFERENCE URGENTE</option>
+                                                    <option value="20">GP</option>
+                                                    <option value="21">TR</option>
+                                                </select>
+                                            </div>
+                                        </div> 
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Tipo Telegrama</label>
+                                                <select class="form-control selected" id="cmbTipoTelegrama" onchange="">
+                                                    <option value="0">SELECCIONE</option>
+                                                    <option value="1">CRÉDITO</option>
+                                                    <option value="2">CONTADO</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Fecha</label>
+                                                <input type="date" id="txtFecha" class="form-control" placeholder="Enter ...">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Oficina de Origen</label>
+                                                <select id="cmbOficinaOrigen" class="form-control selected" onchange="ListarOficinas()">
+                                                    <option value="0">Seleccione</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="vl" style="border-left: 1px solid rgba(0,0,0,.2); height: 300px;"></div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Nombre y Apellido</label>
+                                        <input type="text" id="txtNombreDestinatario" class="form-control" placeholder="Enter ...">
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Pais Destino</label>
+                                                <input type="text" id="txtPais"class="form-control" placeholder="VENEZUELA" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Oficina Destino</label>
+                                                <select id="cmbOficinaDestino" class="form-control selected" onchange="ListarOficinas()">
+                                                    <option value="0">SELECCIONE</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Dirección</label>
+                                        <textarea id="txtDireccionDestino" class="form-control" rows="3" placeholder="Enter ..."></textarea>
+                                    </div>
+                                </div>
+                                </div>
+                                    <div class="row">
+                                        <div class="col-12 text-center mt-3">
+                                            <button type="reset" class="btn btn-outline-warning" id="btnLimpiar">Limpiar</button>
+                                            <button type="button" class="btn btn-outline-warning" id="btnGuardar">Guardar</button>
+                                        </div>
+                                    </div>
+                                
+                            </div>
+                            <hr>
+                            
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</section>
+           
+
+<script>
+
+    $(function() {
+
+        Util.CargarOficinas('cmbOficinaOrigen');
+        Util.CargarOficinas('cmbOficinaDestino');
+        Util.CargarTiposServicios('cmbTipoEnvio');
+        ListarTiposEnvio();
+    })
+   
+</script>
