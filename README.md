@@ -11,7 +11,8 @@ npm install electron --save-dev
 
 Descargar e Instalar el modulo 
 ```sh
-git clone https://github.com/code-epic/epic.apps
-npm install 
+$ git clone https://github.com/code-epic/epic.apps
+$ cd epic.apps/
+$ npm install 
 ```
 
