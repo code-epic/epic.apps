@@ -6,7 +6,7 @@ class Config{
     this.IP = "";
     this.Puerto = ":8081";
     this.PuertoSSL = ":443";
-    this.API = "/ipsfa/api/";
+    this.API = "/v1/api/";
     this.URL = _URL;
   }
   alerta(mensaje, tipoColor, animacion){

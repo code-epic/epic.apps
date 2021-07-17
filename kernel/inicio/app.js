@@ -13,10 +13,10 @@ const {CodeIndexDB} = require('./indexdb.js')
 let { Config, Login } = require('./config.js');
 let { CodeHTTP } = require('./codehttp.js');
 
+
 let Conf = {};
-
 let codeindexdb = new CodeIndexDB()
-
+let _TOKEN_ = '';
 
 
 $(function (){
@@ -41,6 +41,26 @@ $(function (){
         if(err != null){
             $(location).attr("href", "conexion.html");
         }else{
+            fs.readJson('kernel/inicio/const.json', function(err, json) {
+                if(err != null){
+
+                    localStorage.setItem('epicToken', json.token);    
+                    sessionStorage.setItem('epicToken', json.token);  
+                    
+                    
+                    var s = json.token.split(".");
+                    var MenuJS = JSON.parse(atob(s[1]));    
+                    if(MenuJS.Usuario.modulo != undefined){
+                        
+                        $(location).attr("href",  "app/ipostel" + mod + "/index.html");
+                    }else{
+                        //$(location).attr("href","error/starter.html");
+                    }
+                    $("#cardLoading").hide()
+                    $("#cardApps").fadeIn(2500);
+                }
+            });
+
             Conf = new Config(obj.url);
         }
     });
@@ -73,19 +93,23 @@ function Ingresar(){
     $('#cardLogin').hide()
     $("#cardLoading").fadeIn(500);
     var login = new Login($("#usuario").val(), $("#clave").val());
-
+    
 
 
     var _http = new CodeHTTP();
     _http.URL = Conf.URL
-    _http.API = "/ipsfa/app/api/wusuario/login"
+    _http.API = "/v1/api/wusuario/login"
     _http.METODO = 'POST'
     _http.peticion( login.Login() )
     .then( (xhttp) => {
 
         json = JSON.parse(xhttp.responseText);
-        localStorage.setItem('ipsfaToken', json.token);    
-        sessionStorage.setItem('ipsfaToken', json.token);    
+        localStorage.setItem('epicToken', json.token);    
+        sessionStorage.setItem('epicToken', json.token);  
+        _TOKEN = json.token;
+
+        createTokenJSON();
+        
         var s = json.token.split(".");
         var MenuJS = JSON.parse(atob(s[1]));    
         if(MenuJS.Usuario.modulo != undefined){
@@ -135,3 +159,10 @@ require('macaddress').one(function (err, mac) {
     if (err)  throw err
     $("#mac").val(mac);  
 });
+
+function createTokenJSON(){
+    var file = 'kernel/inicio/epictoken.json';
+    fs.writeJson(file, {token: _TOKEN_}, function(err) {
+        $(location).attr("href", "index.html");
+    })
+}

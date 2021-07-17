@@ -65,7 +65,7 @@
     });
 
    
-    var e = sessionStorage.getItem("ipsfaToken");
+    var e = sessionStorage.getItem("epicToken");
     var s = e.split(".");
     var json = JSON.parse(atob(s[1]));
     Usuario = json.Usuario;
@@ -79,7 +79,7 @@
  
 
  function cerrarSesion(){
-    localStorage.removeItem('code-epic');
+    localStorage.removeItem('epicToken');
     $(location).attr("href", "../../index.html");
 }
 
