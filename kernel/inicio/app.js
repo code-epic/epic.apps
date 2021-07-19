@@ -4,7 +4,6 @@
  * Creado por: Carlos Peña 
  */    
 
-
 const http = require('http');
 const https = require('https');
 const fs = require('fs-extra')
@@ -16,7 +15,8 @@ let { CodeHTTP } = require('./codehttp.js');
 
 let Conf = {};
 let codeindexdb = new CodeIndexDB()
-let _TOKEN_ = '';
+let _TOKEN = '';
+var _file = 'kernel/inicio/epictoken.json';
 
 
 $(function (){
@@ -41,40 +41,15 @@ $(function (){
         if(err != null){
             $(location).attr("href", "conexion.html");
         }else{
-            fs.readJson('kernel/inicio/const.json', function(err, json) {
-                if(err != null){
-
-                    localStorage.setItem('epicToken', json.token);    
-                    sessionStorage.setItem('epicToken', json.token);  
-                    
-                    
-                    var s = json.token.split(".");
-                    var MenuJS = JSON.parse(atob(s[1]));    
-                    if(MenuJS.Usuario.modulo != undefined){
-                        
-                        $(location).attr("href",  "app/ipostel" + mod + "/index.html");
-                    }else{
-                        //$(location).attr("href","error/starter.html");
-                    }
-                    $("#cardLoading").hide()
-                    $("#cardApps").fadeIn(2500);
+            fs.readJson('kernel/inicio/epictoken.json', function(err, json) {
+                console.log('conectando ', err, json);
+                if(err == null) {
+                    _asignarToken(json.token, true);
                 }
             });
-
             Conf = new Config(obj.url);
         }
-    });
-
-
-    // var toastElList = [].slice.call(document.querySelectorAll('.toast'))
-    // var toastList = toastElList.map(function (toastEl) {
-    //     console.log(toastEl)
-    //     return new bootstrap.Toast(toastEl, {animate: true, authohide: true})
-    // })
-    // console.log(toastList)
-    // toastList[0].show()
-
-    
+    });    
 }); 
 
 
@@ -102,24 +77,11 @@ function Ingresar(){
     _http.METODO = 'POST'
     _http.peticion( login.Login() )
     .then( (xhttp) => {
-
-        json = JSON.parse(xhttp.responseText);
-        localStorage.setItem('epicToken', json.token);    
-        sessionStorage.setItem('epicToken', json.token);  
-        _TOKEN = json.token;
-
+        var tk = JSON.parse(xhttp.responseText).token;
+       _asignarToken(tk, false);
+       _TOKEN = tk;
         createTokenJSON();
-        
-        var s = json.token.split(".");
-        var MenuJS = JSON.parse(atob(s[1]));    
-        if(MenuJS.Usuario.modulo != undefined){
-            var mod = Array.isArray(MenuJS.Usuario.modulo) == true ? MenuJS.Usuario.modulo[0] : "error";
-            //$(location).attr("href",  "app/" + mod + "/starter.html");
-        }else{
-            //$(location).attr("href","error/starter.html");
-        }
-        $("#cardLoading").hide()
-        $("#cardApps").fadeIn(2500);
+       
     })
     .catch((xherr) =>{
         Conf.alerta("Debe verificar el usuario o clave.", "epic-alert-danger", "");
@@ -161,8 +123,30 @@ require('macaddress').one(function (err, mac) {
 });
 
 function createTokenJSON(){
-    var file = 'kernel/inicio/epictoken.json';
-    fs.writeJson(file, {token: _TOKEN_}, function(err) {
+    
+    fs.writeJson(_file, {token: _TOKEN}, function(err) {
         $(location).attr("href", "index.html");
     })
 }
+
+
+function _asignarToken(tk, active){
+    localStorage.setItem('epicToken', tk);    
+    sessionStorage.setItem('epicToken', tk);                      
+    if (active) {
+        
+        $(location).attr("href",  "kernel/consola/index.html"); 
+    }
+    $("#cardLoading").hide()
+    $("#cardApps").fadeIn(2500);
+
+}
+
+// var s = json.token.split(".");
+// var MenuJS = JSON.parse(atob(s[1]));    
+// if(MenuJS.Usuario.modulo != undefined){
+//     var mod = Array.isArray(MenuJS.Usuario.modulo) == true ? MenuJS.Usuario.modulo[0] : "error";
+//     //$(location).attr("href",  "app/" + mod + "/starter.html");
+// }else{
+//     //$(location).attr("href","error/starter.html");
+// }

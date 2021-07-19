@@ -8,7 +8,7 @@ const https = require('https')
 require('https').globalAgent.options.ca = require('ssl-root-cas').create();
 https.globalAgent.options.rejectUnauthorized = false
 
-const { app, BrowserWindow, Menu } = electron
+const { app, BrowserWindow, Menu, ipcMain } = electron
 
 let mainWindow;
 
@@ -47,10 +47,10 @@ app.on('ready', () => {
         autoHideMenuBar: true,
         fullscreen: false,
 				width: 1024,
-				heigh: 1024,
+				heigh: 768,
 				minWidth: 1024,
-				minHeigth: 1024,
-        titleBarStyle : 'Sistema de las Fuerzas Armadas Bolivariana',
+				minHeigth: 768,
+        titleBarStyle : 'Consola de Control de Desarrollo',
         simpleFullscreen: true,
         fullscreenWindowTitle: true,
         skipTaskbar: true,
@@ -68,4 +68,8 @@ app.on('ready', () => {
     //const mainMenu = Menu.buildFromTemplate(mainMenuWindow)
     //Menu.setApplicationMenu(mainMenu)
     //mainWindow.webContents.openDevTools();
+})
+
+ipcMain.on('maximizarVentana', () => { 
+    console.log('Conectando interfaz');
 })

@@ -3,6 +3,9 @@
  * @ES6 TypeScript
  * Creado por: Carlos Peña 
  */    
+
+ const electron = require('electron')
+ const { ipcRenderer } = electron
  const http = require('http');
  const https = require('https');
  const fs = require('fs-extra')
@@ -11,18 +14,31 @@
  const { CodeHDD } = require('./codehdd.js')
  let Conf = {};
  const os = require("os");
- 
+ var _file = 'kernel/inicio/epictoken.json';
  
  $(function (){
+
+    var tk = sessionStorage.getItem("epicToken");
+    if (tk == undefined) cerrarSesion();
+
+    $("#home").click( () => { 
+        $("#navegacion").hide()
+        $("#codePage").show()
+    })
     
     $("#consola").click( () => {
+        $("#codePage").hide()
+        $("#navegacion").show()
+        ipcRenderer.send("maximizarVentana", "control de cambios");
+        const webview = document.querySelector('webview');
+        console.log(document.get)
         
-        $("#codePage").html(`<webview id = "foo" src = "https://localhost/sssifanb/afiliacion/starter.html" autosize >
-            <div class = "indicator"></div>
-          </webview>`)
-        
-       
+        webview.loadURL("file:///Users/macbook/dev/epic.apps/app/ipostel/index.html");
     })
+
+
+
+    
 
      $("#cerrarSesion").click(() => {
          cerrarSesion();
@@ -65,9 +81,9 @@
     });
 
    
-    var e = sessionStorage.getItem("epicToken");
-    var s = e.split(".");
-    var json = JSON.parse(atob(s[1]));
+    
+    var s = tk.split(".")
+    var json = JSON.parse(atob(s[1]))
     Usuario = json.Usuario;
     console.log(Usuario)
     $("#cedula").html(Usuario.cedula)
@@ -80,6 +96,8 @@
 
  function cerrarSesion(){
     localStorage.removeItem('epicToken');
+    sessionStorage.removeItem('epicToken');
+    fs.remove(_file);
     $(location).attr("href", "../../index.html");
 }
 
