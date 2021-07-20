@@ -31,9 +31,7 @@
         ipcRenderer.send("maximizarVentana", "control de cambios");
         const webview = document.querySelector('webview');
         webview.addEventListener('dom-ready', () => {
-            webview.openDevTools()
-            //webview.isDevToolsFocused()
-            //webview.isDevToolsOpened()
+            //webview.openDevTools()
         })
         var ruta = document.location;
         var srtRuta = "";
@@ -41,8 +39,8 @@
             var segm = ruta.pathname.split("epic.apps");
             strRuta = ruta.origin + segm[0] + "epic.apps/app/ipostel/index.html"
         }
-       
-        webview.loadURL("http://localhost/app/ipostel/index.html");
+        //alert("https://localhost:2286/app/ipostel/index.html?tk=" + tk );
+        webview.loadURL("https://localhost:2286/app/ipostel/index.html?tk=" + tk );
        
     })
 
