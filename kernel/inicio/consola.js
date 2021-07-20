@@ -17,7 +17,6 @@
  var _file = 'kernel/inicio/epictoken.json';
  
  $(function (){
-
     var tk = sessionStorage.getItem("epicToken");
     if (tk == undefined) cerrarSesion();
 
@@ -31,9 +30,20 @@
         $("#navegacion").show()
         ipcRenderer.send("maximizarVentana", "control de cambios");
         const webview = document.querySelector('webview');
-        console.log(document.get)
-        
-        webview.loadURL("file:///Users/macbook/dev/epic.apps/app/ipostel/index.html");
+        webview.addEventListener('dom-ready', () => {
+            webview.openDevTools()
+            //webview.isDevToolsFocused()
+            //webview.isDevToolsOpened()
+        })
+        var ruta = document.location;
+        var srtRuta = "";
+        if(ruta.protocol == "file:"){
+            var segm = ruta.pathname.split("epic.apps");
+            strRuta = ruta.origin + segm[0] + "epic.apps/app/ipostel/index.html"
+        }
+       
+        webview.loadURL("http://localhost/app/ipostel/index.html");
+       
     })
 
 

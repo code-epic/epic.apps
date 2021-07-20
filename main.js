@@ -61,13 +61,14 @@ app.on('ready', () => {
             nodeIntegration: true,
             contextIsolation: false,								
             enableRemoteModule: true,
-            webviewTag: true,
+            webviewTag: true,            
+            webSecurity: false,
         },
     })
     mainWindow.loadURL(`file://${__dirname}/index.html`)
     //const mainMenu = Menu.buildFromTemplate(mainMenuWindow)
     //Menu.setApplicationMenu(mainMenu)
-    //mainWindow.webContents.openDevTools();
+    mainWindow.webContents.openDevTools();
 })
 
 ipcMain.on('maximizarVentana', () => { 
