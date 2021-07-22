@@ -19,20 +19,30 @@
  $(function (){
     var tk = sessionStorage.getItem("epicToken");
     if (tk == undefined) cerrarSesion();
+    const webview = document.querySelector('webview');
 
+    $("#refresh").click( () => {
+        $("#refresh").html(`<i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>`)
+        const loadpage = () => {
+            $("#refresh").html(`<i class="fa fa-refresh fa-3x"></i>`)
+        }
+        webview.reloadIgnoringCache()
+        webview.addEventListener('dom-ready', loadpage)
+    })    
+    $("#backhistory").click( () => {
+        webview.goBack()
+    })
+    $("#development").click( () => {
+        webview.openDevTools()
+    })
     $("#home").click( () => { 
         $("#navegacion").hide()
         $("#codePage").show()
     })
-    
     $("#consola").click( () => {
         $("#codePage").hide()
         $("#navegacion").show()
         ipcRenderer.send("maximizarVentana", "control de cambios");
-        const webview = document.querySelector('webview');
-        webview.addEventListener('dom-ready', () => {
-            //webview.openDevTools()
-        })
         var ruta = document.location;
         var srtRuta = "";
         if(ruta.protocol == "file:"){
